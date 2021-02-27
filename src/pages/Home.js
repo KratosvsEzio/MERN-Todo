@@ -112,7 +112,7 @@ const Home = () => {
             <AddTodo addTodo={addTodo}/>
             <FilterTodos FilterTodosList={FilterTodosList} />
             <Legends />
-            <Todos todos={todos.slice(0, filter).map(todo => todo)} onDbClick={onClick} deleteTodo={deleteTodo} />
+            <Todos todos={todos.slice(0, filter)} onDbClick={onClick} deleteTodo={deleteTodo} />
         </div>
     )
 }
