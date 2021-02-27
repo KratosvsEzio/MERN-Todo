@@ -1,11 +1,11 @@
-import React from 'react';
-import {useState} from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import {useState} from "react";
+import PropTypes from "prop-types";
 
 const AddTodo = ({addTodo}) => {
 
     // State title
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState("");
 
     // onChange Event handler of title input
     const changeTitle = (title) => {
@@ -15,8 +15,8 @@ const AddTodo = ({addTodo}) => {
     // onSubmit Event handler of form
     const onAdd = (e) => {
         e.preventDefault();
-        setTitle('');
-        if(title !== '') {
+        setTitle("");
+        if(title !== "") {
             addTodo(title);
         }
     }

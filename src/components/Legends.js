@@ -1,5 +1,5 @@
-import React from 'react';
-import dbClickicon from '../assets/dbClick.png';
+import React from "react";
+import dbClickicon from "../assets/dbClick.png";
 
 const Legends = () => {
     return (
