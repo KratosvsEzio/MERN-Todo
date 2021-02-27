@@ -10,6 +10,7 @@ const Home = () => {
     const apiUrl = 'http://localhost:7000/api/todos';
 
     const [todos, setTodos] = useState([]);
+    const [filter, setFilter] = useState("200");
 
     // When ever out page loads 
     useEffect(() => {
@@ -100,12 +101,18 @@ const Home = () => {
         setTodos([data.data, ...todos]);
     };
 
+    // Todos Filter event Handler
+    const FilterTodosList = (filter) => {
+        setFilter(filter);
+    };
+
+
     return (
         <div>
             <AddTodo addTodo={addTodo}/>
-            <FilterTodos />
+            <FilterTodos FilterTodosList={FilterTodosList} />
             <Legends />
-            <Todos todos={todos} onDbClick={onClick} deleteTodo={deleteTodo} />
+            <Todos todos={todos.slice(0, filter).map(todo => todo)} onDbClick={onClick} deleteTodo={deleteTodo} />
         </div>
     )
 }
