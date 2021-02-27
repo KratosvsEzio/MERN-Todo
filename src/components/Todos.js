@@ -6,14 +6,14 @@ import Todo from "./Todo";
 const Todos = ({ todos, onDbClick, deleteTodo }) => {
     
     let todoList = todos.map((todo) => (
-        <Todo key={todo._id} todo={todo} onDbClick={onDbClick} deleteTodo={deleteTodo} />
+        <Todo key={todo._id} todo={todo} onClick={onDbClick} deleteTodo={deleteTodo} />
     ));
 
     return (
         <div className="container mx-auto text-gray-700">
             <h3 className="font-extrabold my-5 text-2xl">Todo List</h3>
-            <ul>
-                {todoList}
+            <ul className="text-center">
+                {todoList.length ? todoList : "No Items in the list."}
             </ul>
         </div>
     )
@@ -27,7 +27,7 @@ Todos.defaultProps = {
 // State types of todos
 Todos.propTypes = {
     todos: PropTypes.array,
-    onDbClick: PropTypes.func,
+    onClick: PropTypes.func,
     deleteTodo: PropTypes.func
 }
 

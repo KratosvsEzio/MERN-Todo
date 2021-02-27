@@ -3,7 +3,7 @@ import '../style/todos.css';
 import classNames from "classnames";
 import PropTypes from 'prop-types';
 
-const Todo = ({ todo, onDbClick, deleteTodo }) => {
+const Todo = ({ todo, onClick, deleteTodo }) => {
 
     // ClassName  of Each Todo 
     let todoClassName = (todo) => {
@@ -17,7 +17,7 @@ const Todo = ({ todo, onDbClick, deleteTodo }) => {
     };
 
     return (
-        <li onDoubleClick={() => onDbClick(todo)} key={todo.id}>
+        <li onClick={() => onClick(todo)} key={todo.id}>
             <div className={todoClassName(todo)}>
                 <span> {todo.title} </span>
                 <span onClick={() => deleteTodo(todo)} className="remove bg-pink-400 hover:bg-pink-500">x</span>

@@ -46,7 +46,7 @@ const Home = () => {
     };
 
     // Todo Double Click event Handler / Toggle Complete State of Todo Task
-    const onDbClick = async (myTodo) => {
+    const onClick = async (myTodo) => {
         const todo = {
             title: myTodo.title,
             completed: !myTodo.completed
@@ -105,7 +105,7 @@ const Home = () => {
             <AddTodo addTodo={addTodo}/>
             <FilterTodos />
             <Legends />
-            <Todos todos={todos} onDbClick={onDbClick} deleteTodo={deleteTodo} />
+            <Todos todos={todos} onDbClick={onClick} deleteTodo={deleteTodo} />
         </div>
     )
 }
