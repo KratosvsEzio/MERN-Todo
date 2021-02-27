@@ -7,7 +7,7 @@ import FilterTodos from '../components/FilterTodos';
 
 const Home = () => {
 
-    const apiUrl = 'http://localhost:7000/api/todos';
+    const apiUrl = 'https://aashir-react-todo-list-backend.herokuapp.com/api/todos';
 
     const [todos, setTodos] = useState([]);
     const [filter, setFilter] = useState("200");
