@@ -10,7 +10,7 @@ const Todos = ({ todos, onDbClick, deleteTodo }) => {
     ));
 
     return (
-        <div className="container mx-auto text-gray-700">
+        <div className="container mx-auto text-gray-700 pb-20">
             <h3 className="font-extrabold my-5 text-2xl">Todo List</h3>
             <ul className="text-center">
                 {todoList.length ? todoList : "No Items in the list."}

@@ -8,9 +8,12 @@ const Todo = ({ todo, onClick, deleteTodo }) => {
     // ClassName  of Each Todo 
     let todoClassName = (todo) => {
         return classNames(
-            'w-full', 'leading-snug', 'rounded-lg', 'my-2', 'p-3', 'text-lg', 'capitalize', 'cursor-pointer', 'flex', 'justify-between', 'items-center', 'hover:bg-purple-200',
+            'w-full', 'leading-snug', 'rounded-lg', 'my-2', 'p-3', 'text-lg', 'transition-colors', 
+            'capitalize', 'cursor-pointer', 'flex', 'justify-between', 'items-center', 'shadow-md', 
+            // 'hover:bg-purple-200',
             {
-                'bg-green-200': todo.completed,
+                'bg-purple-400': todo.completed,
+                'text-white': todo.completed,
                 'bg-gray-200': !todo.completed
             }
         )
