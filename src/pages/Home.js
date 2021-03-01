@@ -8,6 +8,7 @@ import FilterTodos from '../components/FilterTodos';
 const Home = () => {
 
     const apiUrl = 'https://aashir-react-todo-list-backend.herokuapp.com/api/todos';
+    // const apiUrl = 'http://localhost:7000/api/todos';
 
     const [todos, setTodos] = useState([]);
     const [filter, setFilter] = useState("200");
@@ -24,7 +25,11 @@ const Home = () => {
 
     // Fetch todos from server
     const fetchTodos = async () => {
-        const res = await fetch(apiUrl);
+        const res = await fetch(apiUrl, {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
         const data = await res.json();
 
         // console.log('todos', data.data);
@@ -35,6 +40,7 @@ const Home = () => {
     const deleteTodo = async (myTodo) => {
         const res = await fetch(apiUrl + `/${myTodo._id}`, {
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
             },
             method: "DELETE",
